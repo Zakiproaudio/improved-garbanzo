@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KopiBarokah - Coffee Shop</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f3ed;
+            color: #3e2723;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #3e2723;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #d7a86e;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #d7a86e;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 8%;
+            background: linear-gradient(
+                rgba(62,39,35,0.8),
+                rgba(62,39,35,0.8)
+            ),
+            url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #d7a86e;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            background: #c48a55;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #a96838;
+            transform: scale(1.05);
+        }
+
+        /* SECTION */
+        section {
+            padding: 70px 8%;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title h2 {
+            font-size: 35px;
+            color: #3e2723;
+        }
+
+        .title p {
+            margin-top: 10px;
+            color: #795548;
+        }
+
+        /* MENU */
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #795548;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            color: #a96838;
+            font-size: 20px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        /* TENTANG */
+        .about {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about img {
+            width: 45%;
+            border-radius: 20px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            line-height: 1.8;
+            color: #654d45;
+        }
+
+        /* FITUR */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            text-align: center;
+        }
+
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .feature .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+        }
+
+        /* KONTAK */
+        .contact {
+            background: #3e2723;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            margin: 10px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #241512;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                text-align: center;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .menu-container,
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .about {
+                flex-direction: column;
+            }
+
+            .about img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">☕ Kopi<span>Barokah</span></div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#features">Fitur</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+            <h1>Selamat Datang di <span>KopiBarokah</span></h1>
+
+            <p>
+                Nikmati aroma kopi pilihan dan suasana nyaman
+                bersama KopiBarokah. Tempat terbaik untuk
+                menikmati kopi bersama teman dan keluarga.
+            </p>
+
+            <a href="#menu" class="btn">☕ Lihat Menu</a>
+        </div>
+
+    </section>
+
+    <!-- MENU -->
+    <section id="menu">
+
+        <div class="title">
+            <h2>☕ Menu Favorit</h2>
+            <p>Pilihan minuman terbaik dari KopiBarokah</p>
+        </div>
+
+        <div class="menu-container">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80">
+
+                <div class="card-content">
+                    <h3>Espresso</h3>
+                    <p>Kopi klasik dengan rasa kuat dan aroma khas.</p>
+                    <span class="price">Rp 15.000</span>
+                    <button class="btn" onclick="pesan('Espresso')">
+                        Pesan
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=800&q=80">
+
+                <div class="card-content">
+                    <h3>Cappuccino</h3>
+                    <p>Perpaduan espresso, susu, dan foam yang lembut.</p>
+                    <span class="price">Rp 20.000</span>
+                    <button class="btn" onclick="pesan('Cappuccino')">
+                        Pesan
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80">
+
+                <div class="card-content">
+                    <h3>Iced Coffee</h3>
+                    <p>Kopi dingin menyegarkan untuk menemani harimu.</p>
+                    <span class="price">Rp 18.000</span>
+                    <button class="btn" onclick="pesan('Iced Coffee')">
+                        Pesan
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=800&q=80">
+
+                <div class="card-content">
+                    <h3>Cafe Latte</h3>
+                    <p>Kopi susu creamy dengan rasa yang lembut.</p>
+                    <span class="price">Rp 22.000</span>
+                    <button class="btn" onclick="pesan('Cafe Latte')">
+                        Pesan
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?auto=format&fit=crop&w=800&q=80">
+
+                <div class="card-content">
+                    <h3>Americano</h3>
+                    <p>Espresso dengan air untuk rasa kopi yang ringan.</p>
+                    <span class="price">Rp 17.000</span>
+                    <button class="btn" onclick="pesan('Americano')">
+                        Pesan
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=80">
+
+                <div class="card-content">
+                    <h3>Coffee & Cake</h3>
+                    <p>Perpaduan kopi dan cake untuk teman bersantai.</p>
+                    <span class="price">Rp 25.000</span>
+                    <button class="btn" onclick="pesan('Coffee & Cake')">
+                        Pesan
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="about">
+
+            <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1000&q=80">
+
+            <div class="about-text">
+                <h2>Tentang KopiBarokah</h2>
+
+                <p>
+                    KopiBarokah adalah coffee shop yang mengutamakan
+                    kualitas kopi, kenyamanan tempat, dan pelayanan
+                    yang ramah.
+                </p>
+
+                <br>
+
+                <p>
+                    Kami menyediakan berbagai macam kopi dan minuman
+                    yang cocok untuk menemani belajar, bekerja,
+                    berkumpul bersama teman, maupun bersantai.
+                </p>
+
+                <br>
+
+                <a href="#contact" class="btn">Hubungi Kami</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FITUR -->
+    <section id="features">
+
+        <div class="title">
+            <h2>✨ Kenapa KopiBarokah?</h2>
+            <p>Fasilitas dan pelayanan terbaik untuk pelanggan</p>
+        </div>
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="icon">☕</div>
+                <h3>Kopi Berkualitas</h3>
+                <p>
+                    Menggunakan pilihan kopi berkualitas
+                    dengan aroma dan rasa yang nikmat.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="icon">📶</div>
+                <h3>Free WiFi</h3>
+                <p>
+                    Nikmati WiFi gratis untuk belajar,
+                    bekerja, atau bersantai.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="icon">🛋️</div>
+                <h3>Tempat Nyaman</h3>
+                <p>
+                    Suasana nyaman untuk berkumpul
+                    bersama teman dan keluarga.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- KONTAK -->
+    <section class="contact" id="contact">
+
+        <h2>📍 Kunjungi KopiBarokah</h2>
+
+        <p>☕ Nikmati kopi, berbagi cerita, dan ciptakan kenangan.</p>
+
+        <p>📍 Jl. Kopi Barokah No. 10, Indonesia</p>
+
+        <p>📞 0812-3456-7890</p>
+
+        <br>
+
+        <button class="btn" onclick="pesan('KopiBarokah')">
+            💬 Pesan Sekarang
+        </button>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            © 2026 KopiBarokah | Coffee • Friends • Happiness ☕
+        </p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function pesan(menu) {
+            alert(
+                "Terima kasih telah memilih " +
+                menu +
+                " di KopiBarokah! ☕"
+            );
+        }
+    </script>
+
+</body>
+  </html>
