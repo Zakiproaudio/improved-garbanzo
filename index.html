@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopilangit Coffee Shop</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5eee6;
+            color: #3e2723;
+        }
+
+        header {
+            background-color: #4e342e;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        nav {
+            background-color: #6d4c41;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #d7ccc8;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        .menu {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .menu h2 {
+            font-size: 30px;
+        }
+
+        .produk {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: white;
+            width: 220px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .card h3 {
+            color: #5d4037;
+        }
+
+        .harga {
+            font-weight: bold;
+            color: #795548;
+        }
+
+        button {
+            background-color: #5d4037;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3e2723;
+        }
+
+        footer {
+            background-color: #4e342e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>☕ Kopilangit</h1>
+        <p>Tempat Nongkrong, Ngopi, dan Berbagi Cerita</p>
+    </header>
+
+    <nav>
+        <a href="#beranda">Beranda</a>
+        <a href="#menu">Menu</a>
+        <a href="#tentang">Tentang Kami</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
+
+    <section class="hero" id="beranda">
+        <h2>Selamat Datang di Kopilangit</h2>
+        <p>Nikmati secangkir kopi terbaik dengan suasana yang nyaman.</p>
+        <button>Pesan Sekarang</button>
+    </section>
+
+    <section class="menu" id="menu">
+        <h2>Menu Kopilangit</h2>
+
+        <div class="produk">
+
+            <div class="card">
+                <h3>☕ Kopi Hitam</h3>
+                <p>Kopi hitam dengan aroma khas dan rasa yang nikmat.</p>
+                <p class="harga">Rp10.000</p>
+                <button>Pesan</button>
+            </div>
+
+            <div class="card">
+                <h3>🥛 Kopi Susu</h3>
+                <p>Perpaduan kopi dan susu yang lembut dan creamy.</p>
+                <p class="harga">Rp15.000</p>
+                <button>Pesan</button>
+            </div>
+
+            <div class="card">
+                <h3>🍫 Coklat</h3>
+                <p>Minuman coklat manis yang cocok untuk bersantai.</p>
+                <p class="harga">Rp13.000</p>
+                <button>Pesan</button>
+            </div>
+
+            <div class="card">
+                <h3>🧊 Es Kopi</h3>
+                <p>Es kopi segar untuk menemani aktivitasmu.</p>
+                <p class="harga">Rp15.000</p>
+                <button>Pesan</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="menu" id="tentang">
+        <h2>Tentang Kopilangit</h2>
+        <p>
+            Kopilangit adalah coffee shop yang menyediakan berbagai macam
+            minuman kopi dan non-kopi dengan harga terjangkau.
+            Cocok untuk nongkrong bersama teman maupun mengerjakan tugas.
+        </p>
+    </section>
+
+    <footer id="kontak">
+        <p>© 2026 Kopilangit Coffee Shop</p>
+        <p>Instagram: @kopilangit</p>
+    </footer>
+
+</body>
+  </html>
