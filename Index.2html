@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Registrasi</title>
+    <link rel="stylesheet" href="registrasii.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-box">
+
+            <h2>Form Registrasi</h2>
+
+            <form onsubmit="return daftar(event)">
+                <input type="email"
+                       placeholder="Masukkan email"
+                       required>
+
+                <input type="password"
+                       id="password"
+                       placeholder="Masukkan password"
+                       required>
+
+                <input type="password"
+                       id="konfirmasi"
+                       placeholder="Masukkan ulang password"
+                       required>
+
+                <button type="submit">Daftar</button>
+            </form>
+
+            <p>Sudah punya akun? <a href="login.html">Login</a></p>
+
+        </div>
+    </div>
+
+    <script>
+        function daftar(event) {
+            event.preventDefault();
+
+            let password =
+                document.getElementById("password").value;
+
+            let konfirmasi =
+                document.getElementById("konfirmasi").value;
+
+            if (password !== konfirmasi) {
+                alert("Password tidak sama!");
+                return false;
+            }
+
+            alert("Form registrasi berhasil diisi!");
+            return false;
+        }
+    </script>
+
+</body>
+  </html>
+  
