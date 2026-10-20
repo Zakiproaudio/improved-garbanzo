@@ -1,0 +1,72 @@
+
+/* Mengatur tampilan halaman */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f8;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Kotak formulir */
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* Judul formulir */
+h2 {
+    text-align: center;
+    font-size: 20px;
+    color: #222222;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+/* Teks penjelasan */
+.deskripsi {
+    text-align: center;
+    font-size: 12px;
+    color: #888888;
+    margin-bottom: 20px;
+}
+
+/* Label formulir */
+label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/* Kolom input dan pilihan */
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+/* Tombol daftar */
+button {
+    width: 100%;
+    padding: 11px;
+    background-color: #2864e8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Efek saat tombol disentuh */
+button:hover {
+    background-color: #174fc7;
+}
